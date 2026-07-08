@@ -3,47 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Ecommerce Demo</title>
+  <title>Streetwear Drop Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Product Manager</h1>
+  <div class="page-shell">
+    <header class="topbar">
+      <span class="brand-pill">Block Drop</span>
+      <div class="brand-links">
+        <span>New Arrivals</span>
+        <span>Limited Run</span>
+        <span>Launch Day</span>
+      </div>
+    </header>
 
-  <section>
-    <h2>Add / Update Product</h2>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Streetwear drop</p>
+        <h1>Fresh apparel for the block.</h1>
+        <p class="hero-text">Turn every release into a headline with a bold, city-driven storefront built for hype, rhythm, and fast-moving inventory.</p>
+        <div class="hero-meta">
+          <span class="hero-badge">Limited Edition</span>
+          <span class="subheading">Shop the latest street style essentials</span>
+        </div>
+      </div>
 
-    <input type="hidden" id="productId" />
+      <div class="hero-panel">
+        <div class="hero-stat">⚡ 24/7 hype tracking</div>
+        <div class="hero-stat">🎧 Curated drops for the culture</div>
+        <div class="hero-stat">👟 Fast checkout for your next release</div>
+      </div>
+    </section>
 
-    <label>
-      Product Name
-      <input type="text" id="name" placeholder="Example: T-Shirt" />
-    </label>
+    <main class="layout">
+      <section class="panel form-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Inventory</p>
+            <h2>Drop Builder</h2>
+          </div>
+        </div>
 
-    <label>
-      Description
-      <input type="text" id="description" placeholder="Short product description" />
-    </label>
+        <input type="hidden" id="productId" />
 
-    <label>
-      Price in PHP
-      <input type="number" id="price" placeholder="Example: 250" />
-    </label>
+        <div class="field-grid">
+          <label class="field">
+            <span>Product Name</span>
+            <input type="text" id="name" placeholder="Example: Fresh Tee" />
+          </label>
 
-    <label>
-      Stock
-      <input type="number" id="stock" placeholder="Example: 10" />
-    </label>
+          <label class="field">
+            <span>Description</span>
+            <input type="text" id="description" placeholder="High quality streetwear vibe" />
+          </label>
 
-    <button onclick="saveProduct()">Save Product</button>
-    <button onclick="clearForm()">Clear</button>
-  </section>
+          <label class="field">
+            <span>Price in PHP</span>
+            <input type="number" id="price" placeholder="Example: 2500" />
+          </label>
 
-  <hr />
+          <label class="field">
+            <span>Stock</span>
+            <input type="number" id="stock" placeholder="Example: 20" />
+          </label>
+        </div>
 
-  <section>
-    <h2>Products</h2>
-    <div id="productList"></div>
-  </section>
+        <div class="button-row">
+          <button class="primary" onclick="saveProduct()">Save Drop</button>
+          <button class="secondary" onclick="clearForm()">Clear</button>
+        </div>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Products</p>
+            <h2>Street Lineup</h2>
+          </div>
+        </div>
+
+        <div id="productList" class="product-grid"></div>
+      </section>
+    </main>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
